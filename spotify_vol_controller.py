@@ -42,7 +42,7 @@ class SettingsDialog(QDialog):
             "To use Spotify Web API mode, you need to create a Spotify app:\n\n"
             "1. Go to: https://developer.spotify.com/dashboard\n"
             "2. Click 'Create an App'\n"
-            "3. In Settings, add Redirect URI: http://localhost:8888/callback\n"
+            "3. In Settings, add Redirect URI: http://127.0.0.1:8888/callback\n"
             "4. Copy your Client ID and Client Secret below:"
         )
         instructions.setWordWrap(True)
@@ -81,7 +81,7 @@ class SettingsDialog(QDialog):
 
 
 # Spotify OAuth Configuration
-REDIRECT_URI = "http://localhost:8888/callback"
+REDIRECT_URI = "http://127.0.0.1:8888/callback"
 SCOPE = "user-modify-playback-state user-read-playback-state"
 TOKEN_FILE = "spotify_tokens.json"
 SETTINGS_FILE = "spotify_settings.json"
@@ -502,7 +502,7 @@ class MainWindow(QWidget):
 
         # Start callback server in background thread
         def run_server():
-            server = HTTPServer(('localhost', 8888), CallbackHandler)
+            server = HTTPServer(('127.0.0.1', 8888), CallbackHandler)
             server.timeout = 120  # 2 minute timeout to make it safe
             CallbackHandler.auth_code = None
 
