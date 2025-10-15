@@ -29,7 +29,7 @@ To use the Spotify Web API mode:
 1. Go to the **[Spotify Developer Dashboard](https://developer.spotify.com/dashboard)**.  
 2. Click **"Create an App"**, and give it a name + description.  
 3. Open your new app’s **Settings**.  
-4. Add this Redirect URI → `http://localhost:8888/callback`  
+4. Add this Redirect URI → `http://127.0.0.1:8888/callback`  
 5. Copy your **Client ID** and **Client Secret** into SpotiVol’s **API Settings** tab.  
 6. Click **“Login to Spotify”** in the app your browser will open to authorize the connection.  
 7. Done! You can now control Spotify remotely.
