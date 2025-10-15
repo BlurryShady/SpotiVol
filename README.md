@@ -1,56 +1,66 @@
-# SpotiVol 🎧
+# 🎧 SpotiVol  
 
-SpotiVol is a lightweight application that lets you control Spotify's volume with custom, global hotkeys. It offers 2 options, local and using Spotify's API.
-
----
-
-## ## Features
-- **Profile-Based Control:** Create multiple profiles with specific volume percentages.
-- **Global Hotkeys:** Bind profiles to a single key press (e.g., `F9`, `ctrl+alt+1`) that works even when the app is minimized.
-- **Dual Operation Modes:** Choose the method that works best for you.
-
-| Feature | Local Mode | API Mode |
-| :--- | :--- | :--- |
-| **Setup** | No setup required | Requires Spotify API credentials |
-| **Platform** | **Windows Only** | Works on any OS |
-| **Control Method**| Changes Spotify's volume in the Windows Mixer | Changes volume within the Spotify app itself |
-| **Best For** | Quick, simple use on Windows | Controlling volume on other devices; more stable |
+SpotiVol is a lightweight desktop app that lets you control **Spotify’s volume with custom global hotkeys**.  
+It supports two modes, **Local** and **Spotify Web API**, so you can use it anywhere.
 
 ---
 
-## ## Setup and Usage
+## Features
 
-### ### API Mode Setup
-To use the more flexible API mode, you need to get credentials from Spotify:
+- **Profile-Based Control:** Create multiple profiles with specific volume percentages (e.g., 100%, 40%).  
+- **Global Hotkeys:** Bind keys like `F9` or `Ctrl + Alt + 1` to instantly switch volume profiles even while gaming.  
+- **Dual Operation Modes:** Choose between **Local (Windows Mixer)** and **API (Spotify Web)** control.
 
-1.  **Go to the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard).**
-2.  Click **"Create an App"** and give it a name and description.
-3.  Go into your new app's **Settings**.
-4.  Add the following Redirect URI: `http://localhost:8888/callback`
-5.  Copy your **Client ID** and **Client Secret** into SpotiVol's API Settings.
-6.  Click **"Login to Spotify"** in the app. This will open a browser window to authorize the connection. After this you're set to go!
-<details>
-  <summary>How the API Authentication Works</summary>
-  
-  - SpotiVol runs a temporary local webserver to handle the Spotify authentication callback.
-  - It retrieves your Access Token and Refresh Token, saving them securely in a local `spotify_tokens.json` file.
-  - The Access Token expires after 1 hour, but SpotiVol automatically uses the Refresh Token to get a new one in the background.
+| Feature | Local Mode | API Mode                                   |
+| :--- | :--- |:-------------------------------------------|
+| **Setup** | No setup required | Requires Spotify API credentials           |
+| **Platform** |  **Windows Only** | Works on any OS                            |
+| **Control Method** | Changes Spotify’s volume in Windows Mixer | Changes volume directly in the Spotify app |
+| **Best For** | Quick, simple use on Windows | Multi-device control, stable performance   |
+
+---
+
+## ⚙️ Setup & Usage
+
+### 🎵 API Mode Setup
+
+To use the Spotify Web API mode:
+
+1. Go to the **[Spotify Developer Dashboard](https://developer.spotify.com/dashboard)**.  
+2. Click **"Create an App"**, and give it a name + description.  
+3. Open your new app’s **Settings**.  
+4. Add this Redirect URI → `http://localhost:8888/callback`  
+5. Copy your **Client ID** and **Client Secret** into SpotiVol’s **API Settings** tab.  
+6. Click **“Login to Spotify”** in the app your browser will open to authorize the connection.  
+7. Done! You can now control Spotify remotely.
+
+
+  - SpotiVol runs a temporary local webserver to capture the Spotify callback.  
+  - It retrieves your **Access Token** and **Refresh Token**, storing them safely in `spotify_tokens.json`.  
+  - The Access Token lasts 1 hour so SpotiVol auto-refreshes it using your Refresh Token.  
 </details>
 
 ---
 
-## ## ⚠️ Important Notes
+## ⚠️ Important Notes
 
-> **Local Mode is Windows Only**
-> This mode relies on the `pycaw` library to function, which is specific to the Windows audio system. If you are on macOS or Linux, you must use the API Mode.
+> **Local Mode is Windows Only**  
+> This feature relies on the `pycaw` library, which interacts with Windows’ audio system.  
+> macOS and Linux users must use **API Mode** instead.
 
-> **Gaming Requires Administrator Privileges**
-> For your hotkeys to be detected while a game is running, **you must run SpotiVol as an administrator**. You can right-click the `.exe` and choose "Run as administrator," or set it to always run as admin in the file's Properties -> Compatibility tab.
+> **Run as Administrator for Gaming**  
+> To detect global hotkeys while gaming, **run SpotiVol as administrator**.  
+> Right-click → “Run as administrator” or enable it permanently under **Properties → Compatibility**.
 
 ---
 
-## ## Feedback and Questions
-If you have any ideas or feedback, feel free to reach out!
-- **Discord:** blurryshady
+## Contact
 
-**I hope you will enjoy and use this project as much as I do, take care and enjoy your life!**
+If you have any ideas or feedback, feel free to reach out!
+
+- **Discord:** [blurryshady](#)
+
+
+
+Built with **Python + PyQt5 + Spotify Web API**
+
