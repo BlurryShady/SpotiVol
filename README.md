@@ -4,6 +4,9 @@ SpotiVol is a lightweight desktop app that lets you control **Spotify’s volume
 It supports two modes, **Local** and **Spotify Web API**, so you can use it anywhere.
 
 ---
+👉 **Watch the tutorial on YouTube:** https://www.youtube.com/watch?v=wnwdXe78Kks
+
+---
 
 ## Features
 
@@ -17,6 +20,7 @@ It supports two modes, **Local** and **Spotify Web API**, so you can use it anyw
 | **Platform** |  **Windows Only** | Works on any OS                            |
 | **Control Method** | Changes Spotify’s volume in Windows Mixer | Changes volume directly in the Spotify app |
 | **Best For** | Quick, simple use on Windows | Using while gaming, stable performance   |
+| **Usability** | As Long As OS is Windows | Requires Spotify Premium   |
 
 ---
 
@@ -53,6 +57,8 @@ To use the Spotify Web API mode:
 > Right-click → “Run as administrator” or enable it permanently under **Properties → Compatibility**.
 > You have to do this otherwise your hotkeys won't go through because of game that you are playing. Running as administrator gives permission for it.
 
+> **You need Spotify Premium for Spotify API**
+> I discovered it when I opened a test account for making the video. Apparently you need Spotify Premium to use Spotify API on your account because it's designed like that.
 ---
 
 ## Contact
